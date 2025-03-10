@@ -15,6 +15,12 @@ app.use(cookieParser());
 app.use(bodyParser.json());
 app.use('/', router);
 
+
+router.get('/check', (req, res) => {
+    res.status(200).json({ message: 'Server is running', status: 'OK' });
+});
+
+
 const server = http.createServer(app);
 
 server.listen(8080, () => {
